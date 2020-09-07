@@ -6,4 +6,4 @@ The rules can be easily changed.
 The neighbours of a cell are the 26 cells around it wich share at least one vertex with it.
 
 
-Yout can download the exported application for Java 8 for Windows from the following link: https://www.dropbox.com/sh/omapiwa554gdvfv/AACKYbtZklhHOdHn4Cf5a-XSa?dl=0
+Yout can download the exported application for Java 8 for Windows from the following link: catonif.itch.io/conways-game-of-life-3d
