@@ -32,6 +32,7 @@ void setup() { // Called at the start of the program
   setupFrame(); // Setting up the second frame
   setRandom(); // Sets the cells to random
   applyRules("6", "5 6 7"); // Default rules
+  if (args != null) if (args.length != 0) readFile(args[0]); // Opens a state of the game with the executable if there is any
   autogeneration.start(); // Sets up autogeneration
 }
 
@@ -453,6 +454,7 @@ void draw() {
 }
 
 void writeFile(String fileName) { // Saves current game state to a file
+  if (!fileName.contains(".")) fileName += ".gls"; // adds the Game of Life State extension if there is not already one
   try {
     OutputStreamWriter w = new OutputStreamWriter(new FileOutputStream(fileName), "UTF-8");
     w.write(""+size+birth.toString().replaceAll(",", "")+survive.toString().replaceAll(",", ""));
@@ -465,6 +467,7 @@ void writeFile(String fileName) { // Saves current game state to a file
 }
 
 void readFile(String fileName) { // Sets the current game state from a file
+  if (!fileName.contains(".")) fileName += ".gls"; // adds the Game of Life State extension if there is not already one
   try {
     InputStreamReader r = new InputStreamReader(new FileInputStream(fileName), "UTF-8");
     String sSize = "", sBirth = "", sSurvive = "";
